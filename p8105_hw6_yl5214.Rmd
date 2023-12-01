@@ -149,10 +149,10 @@ ggplot(aes(x = pred, y = resid)) +
     title= "Model residuals against fitted values"
     )
 ```
-#Description of model selection:
+# Description of model selection:
 All the variables I choose is because those factors are most relevant to birth weight. For example, babysex is included in the model because of potential difference between male and female infants. Baby's head circumference and baby's length at birth are direct physical measurements at birth and likely strong predictors of weight.'delwt','gaweeks', 'ppbmi' are maternal factors which can influence fetal development and hence birth weight. Also, I choose the variables because of data-driven consideration. Each predictor in this model is statistical significance because its p-value is less than 0.05. The adjusted R-squared is 0.6994, which support this model is a good indication of birth weight.
 
-#compare the three models
+#Compare the three models
 ```{r}
 cv_df=
   birthweight|> 
