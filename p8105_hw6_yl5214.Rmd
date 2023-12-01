@@ -30,8 +30,10 @@ scale_fill_discrete = scale_fill_viridis_d
 ```
 
 
-##problem 2
-#load in the dataset
+
+# problem 2
+
+## load in the dataset
 ```{r}
 weather_df = 
   rnoaa::meteo_pull_monitors(
@@ -46,7 +48,7 @@ weather_df =
   select(name, id, everything())
 ```
 
-#bootstrapping
+# bootstrapping
 ```{r}
 # function of boot_sample
 boot_sample = function(df) {
@@ -110,7 +112,7 @@ The distribution for log(beta1 * beta2) is concentrated within a specific negati
 The distribution for R squared estimates is skewed towards higher values and peak at 0.92, suggesting that in most bootstrap samples, the predictors (tmin and prcp) have consistent and substantial contribution to the variability in the response variable. This suggests the model is a good fit.
 
 # Problem 3
-# load in dataset
+## load in dataset
 ```{r}
 birthweight=
   read_csv('data/birthweight.csv') |> 
@@ -149,10 +151,11 @@ ggplot(aes(x = pred, y = resid)) +
     title= "Model residuals against fitted values"
     )
 ```
+
 # Description of model selection:
 All the variables I choose is because those factors are most relevant to birth weight. For example, babysex is included in the model because of potential difference between male and female infants. Baby's head circumference and baby's length at birth are direct physical measurements at birth and likely strong predictors of weight.'delwt','gaweeks', 'ppbmi' are maternal factors which can influence fetal development and hence birth weight. Also, I choose the variables because of data-driven consideration. Each predictor in this model is statistical significance because its p-value is less than 0.05. The adjusted R-squared is 0.6994, which support this model is a good indication of birth weight.
 
-#Compare the three models
+# Compare the three models:
 ```{r}
 cv_df=
   birthweight|> 
