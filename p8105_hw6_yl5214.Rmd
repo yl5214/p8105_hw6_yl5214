@@ -54,6 +54,7 @@ boot_sample = function(df) {
   sample_frac(df, replace = TRUE)
   
 }
+set.seed(1)
 #draw 5000 sample and fit the model to each strap number
 boot_results=
   tibble(strap_number=1:5000) |> 
@@ -189,6 +190,7 @@ cv_results |>
   ggplot(aes(x =model_type, y=rmse))+
   geom_violin()
 ```
-##Conclusion:
+
+# Conclusion:
 model 1, which is the model including 6 variables is the best model because it has the smallest rmse value, indicating the model's predictions are closer to the actual values.
 
